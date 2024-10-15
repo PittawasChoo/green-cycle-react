@@ -914,7 +914,11 @@ const AddProject = () => {
                                         </Tooltip>
                                     </label>
                                     <div style={{ borderRadius: "16px", overflow: "hidden" }}>
-                                        <LoadScript googleMapsApiKey="AIzaSyAwCKypKnxGHWLG0tPV33iFUrD5cYx5SF0">
+                                        <LoadScript
+                                            googleMapsApiKey={
+                                                process.env.REACT_APP_GOOGLE_MAPS_API_KEY
+                                            }
+                                        >
                                             <GoogleMap
                                                 onClick={(e) => setLocation(e.latLng.toJSON())}
                                                 mapContainerStyle={{
